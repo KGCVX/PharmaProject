@@ -1,5 +1,28 @@
-## Choices
-The source that I used for the H2 in-memory database defines the schema of the SQL table with fields in the code rather than using the **CREATE TABLE** command. Spring boot tried to execute the **INSERT VALUES INTO** commands before starting the database when using the *data.sql* file. The file *import.sql* runs after initializing the database, which avoids this problem. Hence, the presence of the *import.sql* file instead of *data.sql* in the *resources* folder. (Defining the schema in *data.sql* with **CREATE TABLE** would also work, but I preferred the in-code fields.)
+# Opdracht sollicitatie
+Naam: Koen Gallé
+
+## Running the API
+Run the ```PharmaPractiseApplication.main()``` function. The REST API will subsequently be active on 
+http://localhost:8080. Next, the HTTP requests from the assignment can be send to . I did not manage to create the bonus
+front-end in time, but http://localhost:8080/h2-console can be used. Note that the *JDBC URL* of the database is: 
+*jdbc:h2:mem:CRYPTO*. There is no password. The logging can be found in the file *history.log*, which is located in the 
+root.
+
+## What is included
+The following aspects of the assignment are included:
+- REST API (POST, GET (single), GET (all), PUT, DELETE)
+- Serialisation to JSON
+- Paging and sorting
+- Predefined records
+- Logging using slf4j
+
+## What is NOT included
+There are no unit tests for the REST API. I did not manage to connect to the database from the test file. Instead, I 
+tested the code with Postman. By starting the API on http://localhost:8080 and sending HTTP requests with Postman I 
+confirmed that the API worked for me. To at least show that the API works I included images from Postman in the *tests* 
+folder in the root. 
+
+I was working on the building design pattern, but could not finish due to time constraints.
 
 ## Sources
 Creating the REST API: \
@@ -9,3 +32,6 @@ Creating the database with spring-data and H2: \
 https://docs.spring.io/spring-boot/reference/data/sql.html
 
 https://docs.spring.io/spring-boot/docs/1.1.0.M1/reference/html/howto-database-initialization.html
+
+Creating a log containing information about interactions with the API: \
+https://www.slf4j.org/manual.html

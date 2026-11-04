@@ -10,11 +10,6 @@ import java.io.Serializable;
 @Entity
 @Table(name = "CRYPTO")
 public class Crypto implements Serializable {
-//    @Id
-//    private String ticker;
-//    private String name;
-//    private long amount;
-//    private long marketCap;
 
     @Id
     @Column(name = "ticker", length = 3)  // Column: ticker
